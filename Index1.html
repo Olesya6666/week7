@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .header {
+        background-color: rgb(107, 199, 107);
+        grid-area: header;
+      }
+
+      .sidebar {
+        background-color: rgb(121, 191, 226);
+        grid-area: sidebar;
+      }
+
+      .main {
+        background-color: rgb(217, 214, 36);
+        grid-area: main;
+      }
+
+      .footer {
+        background-color: rgb(201, 83, 132);
+        grid-area: footer;
+      }
+
+      .container {
+        display: grid;
+        height: 87vh;
+        width: 100vw;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 25% 1fr 25%;
+        grid-template-areas:
+          "header header header header"
+          "sidebar main main main"
+          "footer footer footer footer";
+      }
+
+      @media screen and (min-width: 600px) {
+        .footer {
+          background-color: rgb(201, 83, 132);
+          grid-area: footer;
+        }
+        .container {
+          display: grid;
+          height: 87vh;
+          width: 100vw;
+          grid-template-columns: 50% 50%;
+          grid-template-rows: 25% 1fr 25%;
+          grid-template-areas:
+            "header header header header"
+            "sidebar main main main"
+            "footer footer footer footer";
+        }
+      }
+
+      @media screen and (max-width: 255) {
+        .footer {
+          display: none;
+        }
+        .main {
+          height: 30vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">header</div>
+      <aside class="sidebar">sidebar</aside>
+      <main class="main">main</main>
+      <footer class="footer">footer</footer>
+    </div>
+  </body>
+</html>
